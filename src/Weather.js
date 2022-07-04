@@ -12,7 +12,10 @@ const Weather = () => {
         setIsLoading(true);
         axios
             .get(`http://api.weatherstack.com/current?access_key=3ad490972ca62027b8d67ce49fdb9370&query=${location}`)
-            .then((response) => { settemperature(response.data.current.temperature); }, setIsLoading(false))
+            .then((response) => {
+                settemperature(response.data.current.temperature); 
+                setIsLoading(false)
+            })
             .catch(err => {
                 setIsLoading(false)
                 console.log("error")
